@@ -6,6 +6,11 @@ namespace EFCorePractice.Data
 {
     public class DataContext : DbContext
     {
+
+        public DataContext()
+        {
+        }
+
         public DbSet<Author> Authors { get; set; }
         public DbSet<Course> Courses { get; set; }
 

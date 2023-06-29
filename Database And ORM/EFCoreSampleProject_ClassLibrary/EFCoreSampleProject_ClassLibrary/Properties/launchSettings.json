@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "EFCoreSampleProject_ClassLibrary": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Intern\\Desktop\\MIRHAS-Summer\\Database And ORM\\EFCorePractice\\EFCorePractice.sln"
+    },
+    "Profile 2": {
+      "commandName": "Project"
+    }
+  }
+}
