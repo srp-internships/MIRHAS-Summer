@@ -87,5 +87,10 @@ namespace EFCoreSampleProject
             surname_txb.Text = students_list.CurrentRow.Cells[2].Value.ToString();
             gpu_txb.Text = students_list.CurrentRow.Cells[3].Value.ToString();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            students_list.DataSource = work.Students.GetTopTenStudents().ToList();
+        }
     }
 }

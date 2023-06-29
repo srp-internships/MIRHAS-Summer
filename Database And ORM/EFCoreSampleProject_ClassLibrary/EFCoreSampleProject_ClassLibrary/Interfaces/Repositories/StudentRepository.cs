@@ -21,10 +21,10 @@ namespace EFCoreSampleProject_ClassLibrary.Interfaces.Repositories
         {
             var studnets = (from s in context.Students
                             orderby s.GPU descending
-                            select s).Take(2);
+                            select s).Take(10);
             return studnets;
         }
 
-        public ProjectContext context { get { return context as ProjectContext; } }
+        public ProjectContext context { get { return new ProjectContext(); } }
     }
 }
