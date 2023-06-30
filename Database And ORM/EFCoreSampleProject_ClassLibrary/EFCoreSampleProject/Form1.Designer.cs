@@ -54,7 +54,6 @@
             this.students_list.Size = new System.Drawing.Size(1151, 484);
             this.students_list.TabIndex = 0;
             this.students_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.students_list_CellContentClick);
-            this.students_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.students_list_CellContentClick);
             // 
             // name_txb
             // 
@@ -124,7 +123,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Remove";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.remove_btn);
             // 
             // button2
             // 
@@ -135,7 +134,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.update_btn);
             // 
             // button3
             // 
@@ -146,7 +145,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Get Top Ten GPU\'s";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.getTopStudents_btn);
             // 
             // button4
             // 
@@ -157,7 +156,7 @@
             this.button4.TabIndex = 11;
             this.button4.Text = "Get All";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.getAllStudents_btn);
             // 
             // Form1
             // 

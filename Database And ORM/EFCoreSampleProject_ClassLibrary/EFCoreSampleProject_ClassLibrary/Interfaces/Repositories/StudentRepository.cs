@@ -5,11 +5,7 @@ namespace EFCoreSampleProject_ClassLibrary.Interfaces.Repositories
 {
     internal class StudentRepository : Repository<Student>, IStudentRepository
     {
-
-        public StudentRepository(ProjectContext context) : base(context)
-        {
-
-        }
+        public StudentRepository(ProjectContext context) : base(context) { }
 
         public IEnumerable<Student> GetTopTenStudents()
         {
