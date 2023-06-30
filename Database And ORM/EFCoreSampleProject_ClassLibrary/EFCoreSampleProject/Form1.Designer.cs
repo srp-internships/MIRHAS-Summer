@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.students_list)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             this.students_list.RowTemplate.Height = 29;
             this.students_list.Size = new System.Drawing.Size(1151, 484);
             this.students_list.TabIndex = 0;
+            this.students_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.students_list_CellContentClick);
             this.students_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.students_list_CellContentClick);
             // 
             // name_txb
@@ -146,11 +148,23 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(81, 98);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(204, 29);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Get All";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 646);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -183,5 +197,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private Button button4;
     }
 }

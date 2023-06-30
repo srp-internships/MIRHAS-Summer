@@ -13,6 +13,7 @@ namespace EFCoreSampleProject
             InitializeComponent();
             work = new UnitOfWork(new ProjectContext());
             SetList();
+            students_list.ReadOnly = true;
         }
 
         void SetList()
@@ -45,6 +46,11 @@ namespace EFCoreSampleProject
         {
             if (Check())
             {
+                if (studentId != -1)
+                {
+                    MessageBox.Show("You can not add the existing item");
+                    return;
+                }
 
                 work.Students.Add(new Student
                 {
@@ -74,6 +80,7 @@ namespace EFCoreSampleProject
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (studentId == -1) return;
             work.Students.Remove(studentId);
             work.SaveChanges();
             SetList();
@@ -91,6 +98,11 @@ namespace EFCoreSampleProject
         private void button3_Click(object sender, EventArgs e)
         {
             students_list.DataSource = work.Students.GetTopTenStudents().ToList();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SetList();
         }
     }
 }

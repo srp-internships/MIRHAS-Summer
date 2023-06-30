@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Database And ORM"
+    "\\Database And ORM",
+    "\\Database And ORM\\EFCoreSampleProject_ClassLibrary",
+    "\\Database And ORM\\EFCoreSampleProject_ClassLibrary\\EFCoreSampleProject"
   ],
+  "SelectedNode": "\\Database And ORM\\EFCoreSampleProject_ClassLibrary\\EFCoreSampleProject\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

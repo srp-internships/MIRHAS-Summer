@@ -1,11 +1,5 @@
 ﻿using EFCoreSampleProject_ClassLibrary.Data;
 using EFCoreSampleProject_ClassLibrary.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EFCoreSampleProject_ClassLibrary.Interfaces.Repositories
 {
@@ -19,9 +13,7 @@ namespace EFCoreSampleProject_ClassLibrary.Interfaces.Repositories
 
         public IEnumerable<Student> GetTopTenStudents()
         {
-            var studnets = (from s in context.Students
-                            orderby s.GPU descending
-                            select s).Take(10);
+            var studnets = context.Students.OrderByDescending(s=>s.GPU).Take(10);
             return studnets;
         }
 
