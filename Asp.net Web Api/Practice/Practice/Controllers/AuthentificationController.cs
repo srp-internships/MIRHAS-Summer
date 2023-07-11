@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Practice.Data;
-using Practice.Models.Models;
 using Practice.Models.ModelsDto.TeacherDtos;
 using Practice.Models.Responce;
 

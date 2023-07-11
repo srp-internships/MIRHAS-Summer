@@ -55,6 +55,7 @@ namespace Practice.Controllers
             else return NotFound(responce);
         }
         [HttpPost]
+        [Route("api/AddStudentSubject")]
         public async Task<ActionResult<ServiceResponce>> AddStudentSubject(AddStudentSubjectDto dto)
         {
             var responce = await service.AddStudentSubjects(dto);

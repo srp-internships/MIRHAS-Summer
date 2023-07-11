@@ -5,12 +5,8 @@ namespace Practice.Data
 {
     public class PracticeContext : DbContext
     {
-        public PracticeContext(DbContextOptions<PracticeContext> options) : base(options)
-        {
-            
+        public PracticeContext(DbContextOptions<PracticeContext> options) : base(options) { }
 
-        }
-        
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Subject> Subjects { get; set; }
