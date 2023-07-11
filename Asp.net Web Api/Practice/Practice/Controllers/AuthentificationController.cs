@@ -35,7 +35,6 @@ namespace Practice.Controllers
             }
             return BadRequest(responce);
         }
-
         [HttpGet]
         public async Task<ActionResult<ServiceResponce<List<TeacherGetDto>>>> GetAll()
         {

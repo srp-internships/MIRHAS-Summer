@@ -20,7 +20,7 @@ namespace Practice.Services.StudentServices
             this.context = context;
             this.accessor = accessor;
         }
-        
+
         private int GetTeacherId() => int.Parse(accessor.HttpContext!.User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
         public async Task<ServiceResponce> AddStudent(StudentAddDto student)
@@ -108,6 +108,42 @@ namespace Practice.Services.StudentServices
                 responce.Message = "Student not found";
                 return responce;
             }
+        }
+        public async Task<ServiceResponce> AddStudentSubjects(AddStudentSubjectDto dto)
+        {
+            var responce = new ServiceResponce();
+            try
+            {
+                var students = await context.Students.ToListAsync();
+                var student = (from s in students
+                               where s.Id == dto.StudentId
+                               select s).FirstOrDefault();
+
+                if (student is null)
+                {
+                    responce.Succes = false;
+                    responce.Message = "Student not found";
+                }
+                var subjects = await context.Subjects.ToListAsync();
+                var subject = (from s in subjects
+                               where s.Id == dto.SubjectId
+                               select s).FirstOrDefault();
+
+                if (subject is null)
+                {
+                    responce.Succes = false;
+                    responce.Message = "Subject not found";
+                }
+
+                student!.Subjects!.Add(subject!);
+                await context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                responce.Succes = false;
+                responce.Message = ex.Message;
+            }
+            return responce;
         }
     }
 }

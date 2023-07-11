@@ -10,5 +10,6 @@ namespace Practice.Services.StudentServices
         Task<ServiceResponce> AddStudent(StudentAddDto student);
         Task<ServiceResponce> UpdateStudent(StudentUpdateDto student);
         Task<ServiceResponce> RemoveStudent(int id);
+        Task<ServiceResponce> AddStudentSubjects(AddStudentSubjectDto dto);
     }
 }

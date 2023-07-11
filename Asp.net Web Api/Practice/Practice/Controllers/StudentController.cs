@@ -54,5 +54,15 @@ namespace Practice.Controllers
             }
             else return NotFound(responce);
         }
+        [HttpPost]
+        public async Task<ActionResult<ServiceResponce>> AddStudentSubject(AddStudentSubjectDto dto)
+        {
+            var responce = await service.AddStudentSubjects(dto);
+            if (responce.Succes)
+            {
+                return Ok(responce);
+            }
+            else return BadRequest(responce);
+        }
     }
 }
