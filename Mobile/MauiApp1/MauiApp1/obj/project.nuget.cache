@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gIh0fJ8QMJHmYkKa99ZN2h8DuYvf34S2hf3gZy6g9Bo7bev7FiDcVdyBtYwuyFY9dCYpjDzxxhDuN4vANLi5ow==",
+  "dgSpecHash": "oEk2iAHQBGKzEBphCGBceHzgnq+6YaPG2Dt0MEcJgAZQMc4BUtiNvnHuRYQilo8as+IO07TBIKiKukRpcPAuPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Intern\\Desktop\\MIRHAS-Summer\\Asp.net Web Api\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
+  "projectFilePath": "C:\\Users\\Intern\\Desktop\\MIRHAS-Summer\\Mobile\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Intern\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\Intern\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
