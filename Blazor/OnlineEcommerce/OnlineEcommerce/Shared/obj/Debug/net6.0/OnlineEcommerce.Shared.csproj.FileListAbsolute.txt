@@ -1,0 +1,12 @@
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\bin\Debug\net6.0\OnlineEcommerce.Shared.deps.json
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\bin\Debug\net6.0\OnlineEcommerce.Shared.dll
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\bin\Debug\net6.0\OnlineEcommerce.Shared.pdb
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\obj\Debug\net6.0\OnlineEcommerce.Shared.csproj.AssemblyReference.cache
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\obj\Debug\net6.0\OnlineEcommerce.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\obj\Debug\net6.0\OnlineEcommerce.Shared.AssemblyInfoInputs.cache
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\obj\Debug\net6.0\OnlineEcommerce.Shared.AssemblyInfo.cs
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\obj\Debug\net6.0\OnlineEcommerce.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\obj\Debug\net6.0\OnlineEcommerce.Shared.dll
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\obj\Debug\net6.0\refint\OnlineEcommerce.Shared.dll
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\obj\Debug\net6.0\OnlineEcommerce.Shared.pdb
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OnlineEcommerce\OnlineEcommerce\Shared\obj\Debug\net6.0\ref\OnlineEcommerce.Shared.dll

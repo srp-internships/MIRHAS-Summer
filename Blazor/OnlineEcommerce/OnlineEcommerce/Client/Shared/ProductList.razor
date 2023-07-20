@@ -1,0 +1,58 @@
+﻿@using OnlineEcommerce.Client.Services.ProductService;
+@using OnlineEcommerce.Shared;
+@inject HttpClient http;
+@inject IPRoductService service;
+
+
+@if (service.Products != null)
+{
+    <ul class="list-inline">
+        @if (service.Products != null)
+        {
+            @foreach (var product in service.Products)
+            {
+                <li class="media my-10" style="column-gap:13px">
+                    <div class="media-img-wrapper mr-2">
+                        <a href="/products/@product.Id">
+                            <img class="media-img" src="@product.ImageUrl" alt="@product.Title" />
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        +
+                        <h2>@product.Title</h2>
+                        <h4> @product.Description</h4>
+                        <h3 class="price"> @GetPrice(product)</h3>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+}
+else
+{
+    <h1>Products are null here!</h1>
+}
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        service.ProductChanged += StateHasChanged;
+        await service.GetProducts();
+    }
+    public void Dispose()
+    {
+        service.ProductChanged -= StateHasChanged;
+    }
+
+    public string GetPrice(Product product)
+    {
+        var variants = product.Variants;
+        if (variants.Count == 0)
+            return "0";
+        else if (variants.Count == 1)
+            return variants[0].Price.ToString();
+
+        return $"starting from {variants.Min(p => p.Price).ToString()}";
+    }
+}

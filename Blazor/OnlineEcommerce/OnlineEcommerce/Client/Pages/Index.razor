@@ -1,0 +1,26 @@
+﻿@using Services.ProductService;
+@inject IPRoductService service;
+
+@page "/"
+@page "/search/{text}"
+@page "/{categoryUrl}"
+
+<PageTitle>Products</PageTitle>
+
+<ProductList />
+@code {
+    [Parameter]
+    public string categoryUrl { get; set; }
+
+    [Parameter]
+    public string text { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (categoryUrl != null)
+            await service.GetProductByCategory(categoryUrl);
+
+        if (text != null)
+            await service.GetSearchProducts(text);
+    }
+}

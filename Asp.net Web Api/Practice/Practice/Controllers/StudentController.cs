@@ -6,7 +6,6 @@ using Practice.Services.StudentServices;
 
 namespace Practice.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class StudentController : ControllerBase

@@ -1,0 +1,60 @@
+﻿@using OnlineEcommerce.Client.Services.ProductService;
+@using OnlineEcommerce.Shared;
+@inject NavigationManager manager;
+@inject IPRoductService service;
+
+<div class="input-group">
+    <input @bind-value="searchText"
+    @bind-value:event="oninput"
+           type="search"
+           list="products"
+    @onkeyup="HandleSearch"
+           class="form-control"
+           placeholder="Seach..."
+    @ref="SearchInput" />
+    <datalist id="products">
+        @if (Suggestions != null)
+        {
+            @foreach (var suggestion in Suggestions)
+            {
+                <option> @suggestion</option>
+            }
+        }
+    </datalist>
+</div>
+<div class="input-group-append">
+    <button class="btn btn-primary" @onclick="SearchProduct"><span class="oi oi-magnifying-glass"></span></button>
+
+</div>
+
+@code {
+    public string searchText { get; set; }
+    public List<string> Suggestions { get; set; }
+
+    public ElementReference SearchInput { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstrender)
+    {
+        if (firstrender)
+        {
+            await SearchInput.FocusAsync();
+        }
+    }
+
+    protected void SearchProduct()
+    {
+        manager.NavigateTo($"/search/{searchText}");
+    }
+    public async Task HandleSearch(KeyboardEventArgs args)
+    {
+        if (args.Key == null || args.Key == "Enter")
+        {
+            SearchProduct();
+        }
+        else
+        {
+            ServiceResponce<List<string>> responce = await service.GetSearchSuggestions(searchText);
+            Suggestions = responce.Data;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+﻿@using OnlineEcommerce.Client.Services.ProductService;
+@page "/products/{id:int}"
+@inject IPRoductService productService;
+
+@if (Product == null)
+{
+    <span>Product Loading...</span>
+}
+else
+{
+    <div class="media-img-wrapper mr-2">
+        <img class="media-img" src="@Product.ImageUrl" alt="@Product.Title" />
+    </div>
+    <div class="media-body">
+        <h2>@Product.Title</h2>
+        <p> @Product.Description</p>
+        @if (Product.Variants.Count != 0)
+        {
+            <div>
+                <select @bind="ProductTypeId">
+                    @foreach (var variant in Product.Variants)
+                    {
+                        <option value="@variant.ProductTypeId">@variant.ProductType.Name</option>
+                    }
+                </select>
+            </div>
+        }
+        @if (GetPrice().OriginalPrice > GetPrice().Price)
+        {
+            <p class="text-muted original-price"> @GetPrice().OriginalPrice</p>
+        }
+        <p class="price">@GetPrice().Price</p>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    public Product Product { get; set; }
+
+    public int ProductTypeId { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var responce = await productService.GetProduct(Id);
+        if (responce.Success)
+        {
+            Product = responce.Data!;
+            if (Product.Variants.Count > 0)
+                ProductTypeId = Product.Variants[0].ProductTypeId;
+        }
+        else
+        {
+
+        }
+    }
+
+    public ProductVariant GetPrice()
+    {
+        var variant = Product.Variants.FirstOrDefault(v => v.ProductTypeId == ProductTypeId);
+
+        return variant;
+    }
+}

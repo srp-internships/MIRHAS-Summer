@@ -1,0 +1,15 @@
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\bin\Debug\net7.0\OpenAIChat.exe
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\bin\Debug\net7.0\OpenAIChat.deps.json
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\bin\Debug\net7.0\OpenAIChat.runtimeconfig.json
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\bin\Debug\net7.0\OpenAIChat.dll
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\bin\Debug\net7.0\OpenAIChat.pdb
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\OpenAIChat.csproj.AssemblyReference.cache
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\OpenAIChat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\OpenAIChat.AssemblyInfoInputs.cache
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\OpenAIChat.AssemblyInfo.cs
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\OpenAIChat.csproj.CoreCompileInputs.cache
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\OpenAIChat.dll
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\refint\OpenAIChat.dll
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\OpenAIChat.pdb
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\OpenAIChat.genruntimeconfig.cache
+C:\Users\Intern\Desktop\MIRHAS-Summer\Asp.net Web Api\OpenAIChat\OpenAIChat\obj\Debug\net7.0\ref\OpenAIChat.dll

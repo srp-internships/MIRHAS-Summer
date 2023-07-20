@@ -21,7 +21,7 @@ namespace Practice.Services.StudentServices
             this.accessor = accessor;
         }
 
-        private int GetTeacherId() => int.Parse(accessor.HttpContext!.User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        private int GetTeacherId() => 2 /*int.Parse(accessor.HttpContext!.User.FindFirstValue(ClaimTypes.NameIdentifier)!)*/;
 
         public async Task<ServiceResponce> AddStudent(StudentAddDto student)
         {
@@ -39,7 +39,7 @@ namespace Practice.Services.StudentServices
             var responce = new ServiceResponce<List<StudentGetDto>>();
 
             var students = await context.Students.ToListAsync();
-            responce.Data = students.Where(s => s.TeacherId == GetTeacherId()).Select(s => mapper.Map<StudentGetDto>(s)).ToList();
+            responce.Data = students.Select(s => mapper.Map<StudentGetDto>(s)).ToList();
 
             return responce;
         }
