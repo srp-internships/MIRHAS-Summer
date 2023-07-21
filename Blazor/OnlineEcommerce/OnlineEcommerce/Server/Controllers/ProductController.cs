@@ -17,7 +17,7 @@ namespace OnlineEcommerce.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
-            ServiceResponce<List<Product>> responce = await service.GetProducts();
+            ServiceResponce<ProductsGetResult> responce = await service.GetProducts();
             if (responce.Success)
             {
                 return Ok(responce);
@@ -41,7 +41,7 @@ namespace OnlineEcommerce.Server.Controllers
         [Route("getByCategory/{categoryUrl}")]
         public async Task<IActionResult> GetProductsByCategory(string categoryUrl)
         {
-            ServiceResponce<List<Product>> responce = await service.GetProductsByCategory(categoryUrl);
+            ServiceResponce<ProductsGetResult> responce = await service.GetProductsByCategory(categoryUrl);
             if (responce.Data is null)
                 return NotFound(responce);
             else return Ok(responce);
@@ -51,7 +51,7 @@ namespace OnlineEcommerce.Server.Controllers
         [Route("search/{text}")]
         public async Task<IActionResult> GetSearchProducts(string text)
         {
-            ServiceResponce<List<Product>> responce = await service.SearchProduct(text);
+            ServiceResponce<ProductsGetResult> responce = await service.SearchProduct(text);
             if (responce.Success)
             {
                 return Ok(responce);
@@ -64,6 +64,18 @@ namespace OnlineEcommerce.Server.Controllers
         public async Task<IActionResult> GetSearchSuggestions(string text)
         {
             ServiceResponce<List<string>> responce = await service.GetSearchSuggestions(text);
+            if (responce.Success)
+            {
+                return Ok(responce);
+            }
+            else return NotFound(responce);
+        }
+
+        [HttpGet]
+        [Route("featured/")]
+        public async Task<IActionResult> GetFeaturedProducts()
+        {
+            ServiceResponce<List<Product>> responce = await service.GetFeaturedProducts();
             if (responce.Success)
             {
                 return Ok(responce);

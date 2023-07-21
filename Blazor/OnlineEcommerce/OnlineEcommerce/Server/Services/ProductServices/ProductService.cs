@@ -12,6 +12,11 @@ namespace OnlineEcommerce.Server.Services.ProductServices
             _context = context;
         }
 
+        public async Task<ServiceResponce<List<Product>>> GetFeaturedProducts()
+        {
+            var products = await _context.Products.Include(p => p.Variants).Where(p => p.Featured).ToListAsync();
+            return new ServiceResponce<List<Product>>() { Data = products };
+        }
         public async Task<ServiceResponce<Product>> GetProduct(int id)
         {
             var responce = new ServiceResponce<Product>();
@@ -31,13 +36,13 @@ namespace OnlineEcommerce.Server.Services.ProductServices
             }
             return responce;
         }
-        public async Task<ServiceResponce<List<Product>>> GetProducts()
+        public async Task<ServiceResponce<ProductsGetResult>> GetProducts()
         {
-            var responce = new ServiceResponce<List<Product>>();
+            var responce = new ServiceResponce<ProductsGetResult>();
             var products = await _context.Products.Include(p => p.Variants).ToListAsync();
 
             if (products != null)
-                responce.Data = products;
+                responce.Data = PaginateProducts(products);
             else
             {
                 responce.Success = false;
@@ -47,9 +52,9 @@ namespace OnlineEcommerce.Server.Services.ProductServices
             return responce;
 
         }
-        public async Task<ServiceResponce<List<Product>>> GetProductsByCategory(string categoryUrl)
+        public async Task<ServiceResponce<ProductsGetResult>> GetProductsByCategory(string categoryUrl)
         {
-            var responce = new ServiceResponce<List<Product>>();
+            var responce = new ServiceResponce<ProductsGetResult>();
 
             var allProducts = await _context.Products
                 .Include(p => p.Category)
@@ -65,7 +70,7 @@ namespace OnlineEcommerce.Server.Services.ProductServices
                 responce.Success = false;
                 responce.Message = "There are no products with this category";
             }
-            else responce.Data = products;
+            else responce.Data = PaginateProducts(products);
 
             return responce;
         }
@@ -81,12 +86,14 @@ namespace OnlineEcommerce.Server.Services.ProductServices
 
             return responce;
         }
-        public async Task<ServiceResponce<List<Product>>> SearchProduct(string text)
+        public async Task<ServiceResponce<ProductsGetResult>> SearchProduct(string text)
         {
-            var responce = new ServiceResponce<List<Product>>()
-            {
-                Data = await Search(text)
-            };
+            var products = await Search(text);
+            var pages = PaginateProducts(products);
+
+            var responce = new ServiceResponce<ProductsGetResult>();
+            responce.Data = pages;
+
             return responce;
         }
 
@@ -97,6 +104,32 @@ namespace OnlineEcommerce.Server.Services.ProductServices
                 p.Description.ToLower().Contains(text.ToLower()))
                 .ToListAsync();
             return products;
+        }
+
+        ProductsGetResult PaginateProducts(List<Product> products)
+        {
+            var pages = new List<List<Product>>();
+            var page = new List<Product>();
+            pages.Add(page);
+            int counter = 0;
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (i / 5 == counter)
+                {
+                    page.Add(products[i]);
+                }
+                else
+                {
+                    page = new List<Product>();
+                    page.Add(products[i]);
+                    pages.Add(page);
+                    counter = i / 5;
+                }
+            }
+            return new ProductsGetResult
+            {
+                Pages = pages
+            };
         }
     }
 }

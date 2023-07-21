@@ -1,0 +1,51 @@
+﻿@using OnlineEcommerce.Client.Services.ProductService;
+@inject NavigationManager manager;
+@inject IProductService service;
+
+<center><h2>Top Products of Today</h2></center>
+@if (Products == null || Products.Count == 0)
+{
+    <span>Featured products not found</span>
+}
+else
+{
+    <div class="container" style="margin:5px">
+        @foreach (var product in Products)
+        {
+            @if (product.Featured)
+            {
+                <div class="featured-product">
+                    <div>
+                        <a href="/products/@product.Id">
+                            @if (!string.IsNullOrEmpty(product.ImageUrl))
+                            {
+                                <img class="img" src="@product.ImageUrl">
+                            }
+                        </a>
+                    </div>
+                    <h4><a href="/products/@product.Id">@product.Title</a></h4>
+                    @if (product.Variants != null && product.Variants.Count > 0)
+                    {
+                        <h5 class="price">
+                            $@product.Variants[0].Price
+                        </h5>
+                    }
+                </div>
+            }
+        }
+    </div>
+}
+
+@code {
+    public List<Product> Products { get; set; }
+
+    public void DisplayFeaturedProducts()
+    {
+        manager.NavigateTo("/featured");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Products = await service.GetFeaturedProducts();
+    }
+}

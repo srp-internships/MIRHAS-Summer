@@ -1,17 +1,17 @@
 ﻿@using OnlineEcommerce.Client.Services.ProductService;
 @using OnlineEcommerce.Shared;
 @inject HttpClient http;
-@inject IPRoductService service;
+@inject IProductService service;
+@implements IDisposable;
 
-
-@if (service.Products != null)
+@if (service.Result != null)
 {
     <ul class="list-inline">
-        @if (service.Products != null)
+        @if (service.Result.Pages != null)
         {
-            @foreach (var product in service.Products)
+            @foreach (var product in service.Result.Pages[service.Result.CurrentPage])
             {
-                <li class="media my-10" style="column-gap:13px">
+                <li class="media my-10" style="column-gap:20px">
                     <div class="media-img-wrapper mr-2">
                         <a href="/products/@product.Id">
                             <img class="media-img" src="@product.ImageUrl" alt="@product.Title" />
@@ -25,6 +25,13 @@
                     </div>
                 </li>
             }
+            <div style="flex-direction:row">
+                <div>
+                    <button style="position:absolute" type="button" class="btn btn-primary" @onclick="PreviousPage">Previous</button>
+                    <p>@service.Result.CurrentPage+1</p>
+                    <button style="position:absolute" type="button" class="btn btn-primary" @onclick="NextPage">Next</button>
+                </div>
+            </div>
         }
     </ul>
 }
@@ -44,7 +51,6 @@ else
     {
         service.ProductChanged -= StateHasChanged;
     }
-
     public string GetPrice(Product product)
     {
         var variants = product.Variants;
@@ -54,5 +60,23 @@ else
             return variants[0].Price.ToString();
 
         return $"starting from {variants.Min(p => p.Price).ToString()}";
+    }
+
+    public void PreviousPage()
+    {
+        if (service.Result.CurrentPage != 0)
+        {
+            service.Result.CurrentPage--;
+            StateHasChanged();
+        }
+    }
+
+    public void NextPage()
+    {
+        if (service.Result.CurrentPage + 1 != service.Result.Pages.Count)
+        {
+            service.Result.CurrentPage++;
+            StateHasChanged();
+        }
     }
 }

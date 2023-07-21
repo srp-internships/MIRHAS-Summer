@@ -1,13 +1,19 @@
 ﻿@using Services.ProductService;
-@inject IPRoductService service;
+@inject IProductService service;
 
 @page "/"
 @page "/search/{text}"
 @page "/{categoryUrl}"
 
 <PageTitle>Products</PageTitle>
-
-<ProductList />
+@if (categoryUrl == "featured")
+{
+    <FeaturedProducts />
+}
+else
+{
+    <ProductList />
+}
 @code {
     [Parameter]
     public string categoryUrl { get; set; }
@@ -17,10 +23,15 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        if (categoryUrl != null)
+        if (categoryUrl != null && categoryUrl != "featured")
             await service.GetProductByCategory(categoryUrl);
 
         if (text != null)
             await service.GetSearchProducts(text);
+
+        if (categoryUrl == null && text == null)
+        {
+            await service.GetProducts();
+        }
     }
 }

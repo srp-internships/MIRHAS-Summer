@@ -1,0 +1,9 @@
+﻿@inject NavigationManager manager;
+<button type="button" class="btn btn-primary btn-sm" @onclick="HomeBtn_Click">My Shop</button>
+
+@code {
+    public void HomeBtn_Click()
+    {
+        manager.NavigateTo("/");
+    }
+}

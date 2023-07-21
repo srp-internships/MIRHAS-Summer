@@ -32,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Intern/Desktop/MIRHAS-Summer/Blazor/OnlineEcommerce/OnlineEcommerce/Client/Shared/HomeButton.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEhvbWVCdXR0b24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Intern/Desktop/MIRHAS-Summer/Blazor/OnlineEcommerce/OnlineEcommerce/Client/Shared/SearchComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNlYXJjaENvbXBvbmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdERldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-05j6mbwdqn
 
+[C:/Users/Intern/Desktop/MIRHAS-Summer/Blazor/OnlineEcommerce/OnlineEcommerce/Client/Shared/FeaturedProducts.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZlYXR1cmVkUHJvZHVjdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-84l7b28s1c
+
 [C:/Users/Intern/Desktop/MIRHAS-Summer/Blazor/OnlineEcommerce/OnlineEcommerce/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-22sj9secnq
@@ -59,3 +67,11 @@ build_metadata.AdditionalFiles.CssScope = b-rtuzgn1tpa
 [C:/Users/Intern/Desktop/MIRHAS-Summer/Blazor/OnlineEcommerce/OnlineEcommerce/Client/Shared/ProductList.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFByb2R1Y3RMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-1lg63f6zgp
+
+[C:/Users/Intern/Desktop/MIRHAS-Summer/Blazor/OnlineEcommerce/OnlineEcommerce/Client/Shared/ShopLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNob3BMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xuhs4fpotr
+
+[C:/Users/Intern/Desktop/MIRHAS-Summer/Blazor/OnlineEcommerce/OnlineEcommerce/Client/Shared/ShopNavManu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNob3BOYXZNYW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-fpjiozwc3b

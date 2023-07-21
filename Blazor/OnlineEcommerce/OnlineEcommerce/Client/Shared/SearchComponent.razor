@@ -1,7 +1,7 @@
 ﻿@using OnlineEcommerce.Client.Services.ProductService;
 @using OnlineEcommerce.Shared;
 @inject NavigationManager manager;
-@inject IPRoductService service;
+@inject IProductService service;
 
 <div class="input-group">
     <input @bind-value="searchText"
@@ -51,7 +51,7 @@
         {
             SearchProduct();
         }
-        else
+        else if (searchText != null && searchText != "")
         {
             ServiceResponce<List<string>> responce = await service.GetSearchSuggestions(searchText);
             Suggestions = responce.Data;

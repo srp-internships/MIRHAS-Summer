@@ -3,14 +3,15 @@ using OnlineEcommerce.Shared.Models;
 
 namespace OnlineEcommerce.Client.Services.ProductService
 {
-    public interface IPRoductService
+    public interface IProductService
     {
         event Action ProductChanged;
-        List<Product> Products { get; set; }
+        ProductsGetResult Result { get; set; }
         Task GetProducts();
         Task<ServiceResponce<Product>> GetProduct(int id);
         Task GetProductByCategory(string categoryUrl);
         Task<ServiceResponce<List<string>>> GetSearchSuggestions(string text);
         Task GetSearchProducts(string text);
+        Task<List<Product>> GetFeaturedProducts();
     }
 }
